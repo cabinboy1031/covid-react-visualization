@@ -22,10 +22,12 @@ class App extends React.Component{
                   <Navbar.Brand href="#home">COVID-19</Navbar.Brand>
                 </Navbar>
 
-                {this.state.page === "start" &&
-                <IndexPage/>}
-                {this.state.page === "areaGraph" &&
-                <CovidAreaGraph/>}
+                <Container>
+                  {this.state.page === "start" &&
+                   <IndexPage/>}
+                  {this.state.page === "areaGraph" &&
+                   <CovidAreaGraph/>}
+                </Container>
               </Container>
             </div>
         );
