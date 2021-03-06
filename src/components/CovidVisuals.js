@@ -29,7 +29,7 @@ class CovidAreaGraph extends React.Component {
     render(){
         return(
             <LineChart width={1200} height={600} data={this.state.response}>
-                <Line type="monotone" dataKey="positive" stroke="#8884d8" />
+                <Line type="monotone" dataKey="hospitalizedCurrently" stroke="#8884d8" />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <XAxis dataKey="date" />
                 <YAxis />

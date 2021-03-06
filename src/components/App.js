@@ -2,6 +2,7 @@ import React from 'react';
 //import '../index.css';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
 
 import IndexPage from './Index';
 import CovidAreaGraph from './CovidVisuals'
@@ -19,7 +20,8 @@ class App extends React.Component{
             <div className="app">
               <Container fluid>
                 <Navbar bg="dark">
-                  <Navbar.Brand href="#home">COVID-19</Navbar.Brand>
+                  <Button variant="primary" onClick={() => {this.setState({page:"start"})}}>COVID-19</Button>
+                  <Button variant="primary" onClick={() => {this.setState({page:"areaGraph"})}}>Line Graph </Button>
                 </Navbar>
 
                 <Container>
