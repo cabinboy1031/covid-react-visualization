@@ -17,8 +17,8 @@ class App extends React.Component{
 
     render() {
         return (
-            <div className="app">
-              <Container fluid>
+            <div className="app" >
+              <Container fluid height="100%">
                 <Navbar bg="dark">
                   <Button variant="primary" onClick={() => {this.setState({page:"start"})}}>COVID-19</Button>
                   <Button variant="primary" onClick={() => {this.setState({page:"areaGraph"})}}>Line Graph </Button>

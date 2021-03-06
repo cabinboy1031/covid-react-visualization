@@ -1,5 +1,4 @@
 import React from 'react';
-//import '../index.css';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Alert from 'react-bootstrap/Alert';

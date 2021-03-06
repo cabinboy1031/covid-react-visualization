@@ -1,6 +1,9 @@
 import React from 'react';
-import { LineChart,
-         Line,
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import { AreaChart,
+         Area,
          XAxis,
          YAxis ,
          CartesianGrid,
@@ -20,7 +23,7 @@ class CovidAreaGraph extends React.Component {
             .then((response) => response.json())
             .then((data) => {
                 this.setState({
-                    response: data,
+                    response: data.reverse(),
                 });
                 console.log(this.state.response);
             });
@@ -28,13 +31,19 @@ class CovidAreaGraph extends React.Component {
 
     render(){
         return(
-            <LineChart width={1200} height={600} data={this.state.response}>
-                <Line type="monotone" dataKey="hospitalizedCurrently" stroke="#8884d8" />
-                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                <XAxis dataKey="date" />
-                <YAxis />
-                <Tooltip/>
-            </LineChart>
+                <Row>
+                    <Col sm={4} class="dataSelect"> </Col>
+                    <Col sm={8}>
+                        <AreaChart width={1000} height={700} data={this.state.response} margin={{top:5, right:20, bottom:50, left:20}}>
+                            <Area type="monotone" dataKey="hospitalizedCurrently" stroke="#4484ff" />
+                            <Area type="monotone" dataKey="deathIncrease" stroke="#000000" />
+                            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                            <XAxis dataKey="date" angle={-45} interval={10} textAnchor="end"/>
+                            <YAxis />
+                            <Tooltip/>
+                        </AreaChart>
+                    </Col>
+                </Row>
         );
     }
 }
