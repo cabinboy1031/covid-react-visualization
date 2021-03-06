@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
 import IndexPage from './Index';
-import CovidAreaGraph from './CovidAreaGraph';
+import CovidAreaGraph from './CovidVisuals'
 
 class App extends React.Component{
     constructor(props){
