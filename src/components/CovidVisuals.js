@@ -32,8 +32,8 @@ class CovidAreaGraph extends React.Component {
     render(){
         return(
                 <Row>
-                    <Col sm={4} class="dataSelect"> </Col>
-                    <Col sm={8}>
+                    <Col lg={4}> This is the details column </Col>
+                    <Col lg={8}>
                         <AreaChart width={1000} height={700} data={this.state.response} margin={{top:5, right:20, bottom:50, left:20}}>
                             <Area type="monotone" dataKey="hospitalizedCurrently" stroke="#4484ff" />
                             <Area type="monotone" dataKey="deathIncrease" stroke="#000000" />

@@ -2,7 +2,8 @@ import React from 'react';
 //import '../index.css';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 import IndexPage from './Index';
 import CovidAreaGraph from './CovidVisuals'
@@ -16,20 +17,21 @@ class App extends React.Component{
     }
 
     render() {
+      const handleChange = (val) => this.setState({page: val})
         return (
             <div className="app" >
               <Container fluid height="100%">
                 <Navbar bg="dark">
-                  <Button variant="primary" onClick={() => {this.setState({page:"start"})}}>COVID-19</Button>
-                  <Button variant="primary" onClick={() => {this.setState({page:"areaGraph"})}}>Line Graph </Button>
+                <ToggleButtonGroup name="pageSelect" type="radio" onChange={handleChange}>
+                  <ToggleButton name="start" value="start">Index</ToggleButton>
+                  <ToggleButton name="areaGraph" value="areaGraph">AreaGraph</ToggleButton>
+                </ToggleButtonGroup>
                 </Navbar>
 
-                <Container>
                   {this.state.page === "start" &&
                    <IndexPage/>}
                   {this.state.page === "areaGraph" &&
                    <CovidAreaGraph/>}
-                </Container>
               </Container>
             </div>
         );
