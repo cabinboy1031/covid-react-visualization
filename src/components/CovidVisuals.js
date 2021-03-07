@@ -25,6 +25,7 @@ class CovidAreaGraph extends React.Component {
     }
 
     componentDidMount(){
+        //fetch("https://api.covidtracking.com/v1/states/or/daily.json")
         fetch("https://api.covidtracking.com/v1/us/daily.json")
             .then((response) => response.json())
             .then((data) => {
@@ -73,6 +74,7 @@ class CovidAreaGraph extends React.Component {
                         <ul>
                             <li> While deaths are really small. Hospitalizations are near 80% of the cases diagnosed.</li>
                             <li> The number of patients that need to be in the ICU of those diagnosed are about 1 in 10.</li>
+                            <li> The month with the highest death count recorded was Feburary 20201 </li>
                         </ul>
                     </Col>
                     <Col lg={8}>

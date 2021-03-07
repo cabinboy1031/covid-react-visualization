@@ -22,6 +22,7 @@ class App extends React.Component{
             <div className="app" >
               <Container fluid height="100%">
                 <Navbar bg="dark">
+                  <Navbar.Brand>COVID-19</Navbar.Brand>
                 <ToggleButtonGroup name="pageSelect" type="radio" onChange={handleChange}>
                   <ToggleButton name="start" value="start">Index</ToggleButton>
                   <ToggleButton name="areaGraph" value="areaGraph">AreaGraph</ToggleButton>
