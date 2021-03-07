@@ -63,9 +63,17 @@ class CovidAreaGraph extends React.Component {
                         </p>
 
                         <ToggleButtonGroup size="lg" type="checkbox" variant="secondary" onChange={setAreas} vertical={true}>
-                            <ToggleButton value="hospitalizedCurrently" checked={true}>Hospitalized</ToggleButton>
-                            <ToggleButton value="deathIncrease" checked={true}>Deaths by Day</ToggleButton>
+                            <ToggleButton value="hospitalizedCurrently">Hospitalized</ToggleButton>
+                            <ToggleButton value="deathIncrease" >Deaths by Day</ToggleButton>
+                            <ToggleButton value="positiveIncrease">Cases</ToggleButton>
+                            <ToggleButton value="inIcuCurrently">Patients in ICU</ToggleButton>
                         </ToggleButtonGroup>
+
+                        <h2> Interesting finds </h2>
+                        <ul>
+                            <li> While deaths are really small. Hospitalizations are near 80% of the cases diagnosed.</li>
+                            <li> The number of patients that need to be in the ICU of those diagnosed are about 1 in 10.</li>
+                        </ul>
                     </Col>
                     <Col lg={8}>
                         <AreaChart width={1000} height={700} data={this.state.response} margin={{top:5, right:20, bottom:50, left:20}}>
